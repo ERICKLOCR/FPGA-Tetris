@@ -1,0 +1,676 @@
+Analysis & Synthesis report for VGA
+Thu May 12 21:55:34 2022
+Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: vga_controller:u2
+ 14. Parameter Settings for User Entity Instance: hw_image_generator:u3
+ 15. Port Connectivity Checks: "vga_controller:u2"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 12 21:55:34 2022       ;
+; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
+; Revision Name                      ; VGA                                         ;
+; Top-level Entity Name              ; vga                                         ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 945                                         ;
+;     Total combinational functions  ; 925                                         ;
+;     Dedicated logic registers      ; 197                                         ;
+; Total registers                    ; 197                                         ;
+; Total pins                         ; 32                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; VGA                ; VGA                ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                           ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
+; Gen25MHz.vhd                     ; yes             ; User VHDL File  ; C:/Users/miria/DDM/VGA_T/Gen25MHz.vhd           ;         ;
+; hw_image_generator.vhd           ; yes             ; User VHDL File  ; C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd ;         ;
+; relojlento.vhd                   ; yes             ; User VHDL File  ; C:/Users/miria/DDM/VGA_T/relojlento.vhd         ;         ;
+; VGA.vhd                          ; yes             ; User VHDL File  ; C:/Users/miria/DDM/VGA_T/VGA.vhd                ;         ;
+; vga_controller.vhd               ; yes             ; User VHDL File  ; C:/Users/miria/DDM/VGA_T/vga_controller.vhd     ;         ;
+; seg7.vhd                         ; yes             ; User VHDL File  ; C:/Users/miria/DDM/VGA_T/seg7.vhd               ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                     ;
++---------------------------------------------+-----------------------------------+
+; Resource                                    ; Usage                             ;
++---------------------------------------------+-----------------------------------+
+; Estimated Total logic elements              ; 945                               ;
+;                                             ;                                   ;
+; Total combinational functions               ; 925                               ;
+; Logic element usage by number of LUT inputs ;                                   ;
+;     -- 4 input functions                    ; 319                               ;
+;     -- 3 input functions                    ; 312                               ;
+;     -- <=2 input functions                  ; 294                               ;
+;                                             ;                                   ;
+; Logic elements by mode                      ;                                   ;
+;     -- normal mode                          ; 491                               ;
+;     -- arithmetic mode                      ; 434                               ;
+;                                             ;                                   ;
+; Total registers                             ; 197                               ;
+;     -- Dedicated logic registers            ; 197                               ;
+;     -- I/O registers                        ; 0                                 ;
+;                                             ;                                   ;
+; I/O pins                                    ; 32                                ;
+;                                             ;                                   ;
+; Embedded Multiplier 9-bit elements          ; 0                                 ;
+;                                             ;                                   ;
+; Maximum fan-out node                        ; hw_image_generator:u3|process_1~0 ;
+; Maximum fan-out                             ; 63                                ;
+; Total fan-out                               ; 3402                              ;
+; Average fan-out                             ; 2.87                              ;
++---------------------------------------------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------+--------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name        ; Entity Name        ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------+--------------------+--------------+
+; |vga                       ; 925 (0)             ; 197 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 32   ; 0            ; 0          ; |vga                       ; vga                ; work         ;
+;    |Gen25MHz:u1|           ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|Gen25MHz:u1           ; Gen25MHz           ; work         ;
+;    |hw_image_generator:u3| ; 821 (821)           ; 124 (124)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|hw_image_generator:u3 ; hw_image_generator ; work         ;
+;    |relojlento:u4|         ; 39 (39)             ; 23 (23)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|relojlento:u4         ; relojlento         ; work         ;
+;    |relojlento:u5|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|relojlento:u5         ; relojlento         ; work         ;
+;    |relojlento:u6|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|relojlento:u6         ; relojlento         ; work         ;
+;    |relojlento:u7|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|relojlento:u7         ; relojlento         ; work         ;
+;    |relojlento:u8|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|relojlento:u8         ; relojlento         ; work         ;
+;    |relojlento:u9|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|relojlento:u9         ; relojlento         ; work         ;
+;    |vga_controller:u2|     ; 59 (59)             ; 44 (44)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga|vga_controller:u2     ; vga_controller     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                           ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal            ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; hw_image_generator:u3|red[0]                        ; hw_image_generator:u3|red[3]   ; yes                    ;
+; hw_image_generator:u3|red[1]                        ; hw_image_generator:u3|red[3]   ; yes                    ;
+; hw_image_generator:u3|red[2]                        ; hw_image_generator:u3|red[3]   ; yes                    ;
+; hw_image_generator:u3|red[3]                        ; hw_image_generator:u3|red[3]   ; yes                    ;
+; hw_image_generator:u3|green[0]                      ; hw_image_generator:u3|green[3] ; yes                    ;
+; hw_image_generator:u3|green[1]                      ; hw_image_generator:u3|green[3] ; yes                    ;
+; hw_image_generator:u3|green[2]                      ; hw_image_generator:u3|green[3] ; yes                    ;
+; hw_image_generator:u3|green[3]                      ; hw_image_generator:u3|green[3] ; yes                    ;
+; hw_image_generator:u3|blue[0]                       ; hw_image_generator:u3|blue[3]  ; yes                    ;
+; hw_image_generator:u3|blue[1]                       ; hw_image_generator:u3|blue[3]  ; yes                    ;
+; hw_image_generator:u3|blue[2]                       ; hw_image_generator:u3|blue[3]  ; yes                    ;
+; hw_image_generator:u3|blue[3]                       ; hw_image_generator:u3|blue[3]  ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                                ;                        ;
++-----------------------------------------------------+--------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; vga_controller:u2|column[10..30]        ; Stuck at GND due to stuck port data_in ;
+; vga_controller:u2|row[10..30]           ; Stuck at GND due to stuck port data_in ;
+; relojlento:u5|conteo[20]                ; Merged with relojlento:u4|conteo[20]   ;
+; relojlento:u6|conteo[20]                ; Merged with relojlento:u4|conteo[20]   ;
+; relojlento:u7|conteo[20]                ; Merged with relojlento:u4|conteo[20]   ;
+; relojlento:u8|conteo[20]                ; Merged with relojlento:u4|conteo[20]   ;
+; relojlento:u9|conteo[20]                ; Merged with relojlento:u4|conteo[20]   ;
+; relojlento:u5|conteo[19]                ; Merged with relojlento:u4|conteo[19]   ;
+; relojlento:u6|conteo[19]                ; Merged with relojlento:u4|conteo[19]   ;
+; relojlento:u7|conteo[19]                ; Merged with relojlento:u4|conteo[19]   ;
+; relojlento:u8|conteo[19]                ; Merged with relojlento:u4|conteo[19]   ;
+; relojlento:u9|conteo[19]                ; Merged with relojlento:u4|conteo[19]   ;
+; relojlento:u5|conteo[16]                ; Merged with relojlento:u4|conteo[16]   ;
+; relojlento:u6|conteo[16]                ; Merged with relojlento:u4|conteo[16]   ;
+; relojlento:u7|conteo[16]                ; Merged with relojlento:u4|conteo[16]   ;
+; relojlento:u8|conteo[16]                ; Merged with relojlento:u4|conteo[16]   ;
+; relojlento:u9|conteo[16]                ; Merged with relojlento:u4|conteo[16]   ;
+; relojlento:u5|conteo[15]                ; Merged with relojlento:u4|conteo[15]   ;
+; relojlento:u6|conteo[15]                ; Merged with relojlento:u4|conteo[15]   ;
+; relojlento:u7|conteo[15]                ; Merged with relojlento:u4|conteo[15]   ;
+; relojlento:u8|conteo[15]                ; Merged with relojlento:u4|conteo[15]   ;
+; relojlento:u9|conteo[15]                ; Merged with relojlento:u4|conteo[15]   ;
+; relojlento:u5|conteo[14]                ; Merged with relojlento:u4|conteo[14]   ;
+; relojlento:u6|conteo[14]                ; Merged with relojlento:u4|conteo[14]   ;
+; relojlento:u7|conteo[14]                ; Merged with relojlento:u4|conteo[14]   ;
+; relojlento:u8|conteo[14]                ; Merged with relojlento:u4|conteo[14]   ;
+; relojlento:u9|conteo[14]                ; Merged with relojlento:u4|conteo[14]   ;
+; relojlento:u5|conteo[12]                ; Merged with relojlento:u4|conteo[12]   ;
+; relojlento:u6|conteo[12]                ; Merged with relojlento:u4|conteo[12]   ;
+; relojlento:u7|conteo[12]                ; Merged with relojlento:u4|conteo[12]   ;
+; relojlento:u8|conteo[12]                ; Merged with relojlento:u4|conteo[12]   ;
+; relojlento:u9|conteo[12]                ; Merged with relojlento:u4|conteo[12]   ;
+; relojlento:u5|conteo[11]                ; Merged with relojlento:u4|conteo[11]   ;
+; relojlento:u6|conteo[11]                ; Merged with relojlento:u4|conteo[11]   ;
+; relojlento:u7|conteo[11]                ; Merged with relojlento:u4|conteo[11]   ;
+; relojlento:u8|conteo[11]                ; Merged with relojlento:u4|conteo[11]   ;
+; relojlento:u9|conteo[11]                ; Merged with relojlento:u4|conteo[11]   ;
+; relojlento:u5|conteo[9]                 ; Merged with relojlento:u4|conteo[9]    ;
+; relojlento:u6|conteo[9]                 ; Merged with relojlento:u4|conteo[9]    ;
+; relojlento:u7|conteo[9]                 ; Merged with relojlento:u4|conteo[9]    ;
+; relojlento:u8|conteo[9]                 ; Merged with relojlento:u4|conteo[9]    ;
+; relojlento:u9|conteo[9]                 ; Merged with relojlento:u4|conteo[9]    ;
+; relojlento:u5|conteo[6]                 ; Merged with relojlento:u4|conteo[6]    ;
+; relojlento:u6|conteo[6]                 ; Merged with relojlento:u4|conteo[6]    ;
+; relojlento:u7|conteo[6]                 ; Merged with relojlento:u4|conteo[6]    ;
+; relojlento:u8|conteo[6]                 ; Merged with relojlento:u4|conteo[6]    ;
+; relojlento:u9|conteo[6]                 ; Merged with relojlento:u4|conteo[6]    ;
+; relojlento:u5|conteo[4]                 ; Merged with relojlento:u4|conteo[4]    ;
+; relojlento:u6|conteo[4]                 ; Merged with relojlento:u4|conteo[4]    ;
+; relojlento:u7|conteo[4]                 ; Merged with relojlento:u4|conteo[4]    ;
+; relojlento:u8|conteo[4]                 ; Merged with relojlento:u4|conteo[4]    ;
+; relojlento:u9|conteo[4]                 ; Merged with relojlento:u4|conteo[4]    ;
+; relojlento:u5|conteo[3]                 ; Merged with relojlento:u4|conteo[3]    ;
+; relojlento:u6|conteo[3]                 ; Merged with relojlento:u4|conteo[3]    ;
+; relojlento:u7|conteo[3]                 ; Merged with relojlento:u4|conteo[3]    ;
+; relojlento:u8|conteo[3]                 ; Merged with relojlento:u4|conteo[3]    ;
+; relojlento:u9|conteo[3]                 ; Merged with relojlento:u4|conteo[3]    ;
+; relojlento:u5|conteo[2]                 ; Merged with relojlento:u4|conteo[2]    ;
+; relojlento:u6|conteo[2]                 ; Merged with relojlento:u4|conteo[2]    ;
+; relojlento:u7|conteo[2]                 ; Merged with relojlento:u4|conteo[2]    ;
+; relojlento:u8|conteo[2]                 ; Merged with relojlento:u4|conteo[2]    ;
+; relojlento:u9|conteo[2]                 ; Merged with relojlento:u4|conteo[2]    ;
+; relojlento:u5|conteo[1]                 ; Merged with relojlento:u4|conteo[1]    ;
+; relojlento:u6|conteo[1]                 ; Merged with relojlento:u4|conteo[1]    ;
+; relojlento:u7|conteo[1]                 ; Merged with relojlento:u4|conteo[1]    ;
+; relojlento:u8|conteo[1]                 ; Merged with relojlento:u4|conteo[1]    ;
+; relojlento:u9|conteo[1]                 ; Merged with relojlento:u4|conteo[1]    ;
+; relojlento:u5|conteo[0]                 ; Merged with relojlento:u4|conteo[0]    ;
+; relojlento:u6|conteo[0]                 ; Merged with relojlento:u4|conteo[0]    ;
+; relojlento:u7|conteo[0]                 ; Merged with relojlento:u4|conteo[0]    ;
+; relojlento:u8|conteo[0]                 ; Merged with relojlento:u4|conteo[0]    ;
+; relojlento:u9|conteo[0]                 ; Merged with relojlento:u4|conteo[0]    ;
+; relojlento:u5|conteo[21]                ; Merged with relojlento:u4|conteo[21]   ;
+; relojlento:u6|conteo[21]                ; Merged with relojlento:u4|conteo[21]   ;
+; relojlento:u7|conteo[21]                ; Merged with relojlento:u4|conteo[21]   ;
+; relojlento:u8|conteo[21]                ; Merged with relojlento:u4|conteo[21]   ;
+; relojlento:u9|conteo[21]                ; Merged with relojlento:u4|conteo[21]   ;
+; relojlento:u5|conteo[18]                ; Merged with relojlento:u4|conteo[18]   ;
+; relojlento:u6|conteo[18]                ; Merged with relojlento:u4|conteo[18]   ;
+; relojlento:u7|conteo[18]                ; Merged with relojlento:u4|conteo[18]   ;
+; relojlento:u8|conteo[18]                ; Merged with relojlento:u4|conteo[18]   ;
+; relojlento:u9|conteo[18]                ; Merged with relojlento:u4|conteo[18]   ;
+; relojlento:u5|conteo[17]                ; Merged with relojlento:u4|conteo[17]   ;
+; relojlento:u6|conteo[17]                ; Merged with relojlento:u4|conteo[17]   ;
+; relojlento:u7|conteo[17]                ; Merged with relojlento:u4|conteo[17]   ;
+; relojlento:u8|conteo[17]                ; Merged with relojlento:u4|conteo[17]   ;
+; relojlento:u9|conteo[17]                ; Merged with relojlento:u4|conteo[17]   ;
+; relojlento:u5|conteo[13]                ; Merged with relojlento:u4|conteo[13]   ;
+; relojlento:u6|conteo[13]                ; Merged with relojlento:u4|conteo[13]   ;
+; relojlento:u7|conteo[13]                ; Merged with relojlento:u4|conteo[13]   ;
+; relojlento:u8|conteo[13]                ; Merged with relojlento:u4|conteo[13]   ;
+; relojlento:u9|conteo[13]                ; Merged with relojlento:u4|conteo[13]   ;
+; relojlento:u5|conteo[10]                ; Merged with relojlento:u4|conteo[10]   ;
+; relojlento:u6|conteo[10]                ; Merged with relojlento:u4|conteo[10]   ;
+; relojlento:u7|conteo[10]                ; Merged with relojlento:u4|conteo[10]   ;
+; relojlento:u8|conteo[10]                ; Merged with relojlento:u4|conteo[10]   ;
+; relojlento:u9|conteo[10]                ; Merged with relojlento:u4|conteo[10]   ;
+; relojlento:u5|conteo[8]                 ; Merged with relojlento:u4|conteo[8]    ;
+; relojlento:u6|conteo[8]                 ; Merged with relojlento:u4|conteo[8]    ;
+; relojlento:u7|conteo[8]                 ; Merged with relojlento:u4|conteo[8]    ;
+; relojlento:u8|conteo[8]                 ; Merged with relojlento:u4|conteo[8]    ;
+; relojlento:u9|conteo[8]                 ; Merged with relojlento:u4|conteo[8]    ;
+; relojlento:u5|conteo[7]                 ; Merged with relojlento:u4|conteo[7]    ;
+; relojlento:u6|conteo[7]                 ; Merged with relojlento:u4|conteo[7]    ;
+; relojlento:u7|conteo[7]                 ; Merged with relojlento:u4|conteo[7]    ;
+; relojlento:u8|conteo[7]                 ; Merged with relojlento:u4|conteo[7]    ;
+; relojlento:u9|conteo[7]                 ; Merged with relojlento:u4|conteo[7]    ;
+; relojlento:u5|conteo[5]                 ; Merged with relojlento:u4|conteo[5]    ;
+; relojlento:u6|conteo[5]                 ; Merged with relojlento:u4|conteo[5]    ;
+; relojlento:u7|conteo[5]                 ; Merged with relojlento:u4|conteo[5]    ;
+; relojlento:u8|conteo[5]                 ; Merged with relojlento:u4|conteo[5]    ;
+; relojlento:u9|conteo[5]                 ; Merged with relojlento:u4|conteo[5]    ;
+; vga_controller:u2|row[9]                ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 153 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 197   ;
+; Number of registers using Synchronous Clear  ; 50    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 145   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; hw_image_generator:u3|led               ; 1       ;
+; hw_image_generator:u3|led2              ; 2       ;
+; hw_image_generator:u3|led3              ; 2       ;
+; hw_image_generator:u3|led4              ; 2       ;
+; hw_image_generator:u3|led5              ; 2       ;
+; hw_image_generator:u3|led6              ; 2       ;
+; vga_controller:u2|column[31]            ; 17      ;
+; vga_controller:u2|row[31]               ; 20      ;
+; vga_controller:u2|row[0]                ; 23      ;
+; vga_controller:u2|column[0]             ; 18      ;
+; hw_image_generator:u3|y[3]              ; 6       ;
+; hw_image_generator:u3|y[1]              ; 6       ;
+; hw_image_generator:u3|x[3]              ; 4       ;
+; hw_image_generator:u3|x[1]              ; 4       ;
+; Total number of inverted registers = 14 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |vga|hw_image_generator:u3|x2[3] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |vga|hw_image_generator:u3|x3[3] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |vga|hw_image_generator:u3|x1[1] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |vga|hw_image_generator:u3|x4[4] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |vga|hw_image_generator:u3|x5[7] ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |vga|hw_image_generator:u3|y2[1] ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |vga|hw_image_generator:u3|y3[4] ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 0 LEs                ; 28 LEs                 ; Yes        ; |vga|hw_image_generator:u3|y[0]  ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |vga|hw_image_generator:u3|y1[7] ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |vga|hw_image_generator:u3|y4[6] ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |vga|hw_image_generator:u3|y5[8] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |vga|hw_image_generator:u3|y[1]  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |vga|vga_controller:u2|v_count   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |vga|hw_image_generator:u3|x1    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_controller:u2 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; h_pulse        ; 96    ; Signed Integer                        ;
+; h_bp           ; 48    ; Signed Integer                        ;
+; h_pixels       ; 640   ; Signed Integer                        ;
+; h_fp           ; 16    ; Signed Integer                        ;
+; h_pol          ; '0'   ; Enumerated                            ;
+; v_pulse        ; 2     ; Signed Integer                        ;
+; v_bp           ; 33    ; Signed Integer                        ;
+; v_pixels       ; 480   ; Signed Integer                        ;
+; v_fp           ; 10    ; Signed Integer                        ;
+; v_pol          ; '0'   ; Enumerated                            ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: hw_image_generator:u3 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                            ;
+; pixels_x       ; 600   ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "vga_controller:u2" ;
++---------+-------+----------+------------------+
+; Port    ; Type  ; Severity ; Details          ;
++---------+-------+----------+------------------+
+; reset_n ; Input ; Info     ; Stuck at VCC     ;
++---------+-------+----------+------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 32                          ;
+; cycloneiii_ff         ; 197                         ;
+;     CLR               ; 6                           ;
+;     ENA               ; 95                          ;
+;     ENA SCLR          ; 50                          ;
+;     plain             ; 46                          ;
+; cycloneiii_io_obuf    ; 1                           ;
+; cycloneiii_lcell_comb ; 934                         ;
+;     arith             ; 434                         ;
+;         2 data inputs ; 176                         ;
+;         3 data inputs ; 258                         ;
+;     normal            ; 500                         ;
+;         0 data inputs ; 14                          ;
+;         1 data inputs ; 29                          ;
+;         2 data inputs ; 84                          ;
+;         3 data inputs ; 54                          ;
+;         4 data inputs ; 319                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 6.24                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+    Info: Processing started: Thu May 12 21:55:20 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file gen25mhz.vhd
+    Info (12022): Found design unit 1: Gen25MHz-behavior File: C:/Users/miria/DDM/VGA_T/Gen25MHz.vhd Line: 9
+    Info (12023): Found entity 1: Gen25MHz File: C:/Users/miria/DDM/VGA_T/Gen25MHz.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hw_image_generator.vhd
+    Info (12022): Found design unit 1: hw_image_generator-behavior File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 28
+    Info (12023): Found entity 1: hw_image_generator File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file relojlento.vhd
+    Info (12022): Found design unit 1: relojlento-behavior File: C:/Users/miria/DDM/VGA_T/relojlento.vhd Line: 10
+    Info (12023): Found entity 1: relojlento File: C:/Users/miria/DDM/VGA_T/relojlento.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
+    Info (12022): Found design unit 1: vga-behavioral File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 21
+    Info (12023): Found entity 1: vga File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
+    Info (12022): Found design unit 1: vga_controller-behavior File: C:/Users/miria/DDM/VGA_T/vga_controller.vhd Line: 50
+    Info (12023): Found entity 1: vga_controller File: C:/Users/miria/DDM/VGA_T/vga_controller.vhd Line: 26
+Info (12021): Found 2 design units, including 1 entities, in source file seg7.vhd
+    Info (12022): Found design unit 1: seg7-behavior File: C:/Users/miria/DDM/VGA_T/seg7.vhd Line: 9
+    Info (12023): Found entity 1: seg7 File: C:/Users/miria/DDM/VGA_T/seg7.vhd Line: 4
+Info (12127): Elaborating entity "VGA" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at VGA.vhd(26): object "reset" assigned a value but never read File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 26
+Warning (10036): Verilog HDL or VHDL warning at VGA.vhd(26): object "cs" assigned a value but never read File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 26
+Info (12129): Elaborating entity "Gen25MHz" using architecture "A:behavior" for hierarchy "Gen25MHz:u1" File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 36
+Info (12129): Elaborating entity "vga_controller" using architecture "A:behavior" for hierarchy "vga_controller:u2" File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 38
+Info (12129): Elaborating entity "hw_image_generator" using architecture "A:behavior" for hierarchy "hw_image_generator:u3" File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(233): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(233): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(237): signal "x3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 237
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(237): signal "y3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 237
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(242): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 242
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(242): signal "y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 242
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(245): signal "x4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 245
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(245): signal "y4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 245
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(251): signal "x2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 251
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(251): signal "y2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 251
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(255): signal "x5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 255
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(255): signal "y5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 255
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(38): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(38): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(38): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(38): inferring latch(es) for signal or variable "l_x", which holds its previous value in one or more paths through the process File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(38): inferring latch(es) for signal or variable "l_y", which holds its previous value in one or more paths through the process File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(38): inferring latch(es) for signal or variable "l_y1", which holds its previous value in one or more paths through the process File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(316): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 316
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(316): signal "l_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 316
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(368): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 368
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(368): signal "l_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 368
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(419): signal "x2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 419
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(419): signal "l_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 419
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(471): signal "x3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 471
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(471): signal "l_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 471
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(523): signal "x4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 523
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(523): signal "l_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 523
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(576): signal "x5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 576
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(576): signal "l_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 576
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(585): signal "x5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 585
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(585): signal "l_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 585
+Info (10041): Inferred latch for "l_y1[0]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[1]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[2]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[3]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[4]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[5]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[6]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[7]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[8]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y1[9]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[0]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[1]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[2]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[3]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[4]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[5]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[6]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[7]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[8]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_y[9]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[0]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[1]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[2]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[3]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[4]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[5]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[6]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[7]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[8]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "l_x[9]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "blue[0]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "blue[1]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "blue[2]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "blue[3]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "green[0]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "green[1]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "green[2]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "green[3]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "red[0]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "red[1]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "red[2]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (10041): Inferred latch for "red[3]" at hw_image_generator.vhd(38) File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Info (12129): Elaborating entity "relojlento" using architecture "A:behavior" for hierarchy "relojlento:u4" File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 46
+Info (12129): Elaborating entity "seg7" using architecture "A:behavior" for hierarchy "seg7:u10" File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 64
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "puntos" and its non-tri-state driver. File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 14
+Info (13060): One or more bidirectional pins are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "puntos" is moved to its source File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 14
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[3]" merged with LATCH primitive "hw_image_generator:u3|red[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[2]" merged with LATCH primitive "hw_image_generator:u3|red[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[1]" merged with LATCH primitive "hw_image_generator:u3|red[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[3]" merged with LATCH primitive "hw_image_generator:u3|green[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[2]" merged with LATCH primitive "hw_image_generator:u3|green[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[1]" merged with LATCH primitive "hw_image_generator:u3|green[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[3]" merged with LATCH primitive "hw_image_generator:u3|blue[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[2]" merged with LATCH primitive "hw_image_generator:u3|blue[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[1]" merged with LATCH primitive "hw_image_generator:u3|blue[0]" File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+Warning (13012): Latch hw_image_generator:u3|red[0] has unsafe behavior File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vga_controller:u2|row[31] File: C:/Users/miria/DDM/VGA_T/vga_controller.vhd Line: 63
+Warning (13012): Latch hw_image_generator:u3|green[0] has unsafe behavior File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vga_controller:u2|row[31] File: C:/Users/miria/DDM/VGA_T/vga_controller.vhd Line: 63
+Warning (13012): Latch hw_image_generator:u3|blue[0] has unsafe behavior File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 38
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vga_controller:u2|row[31] File: C:/Users/miria/DDM/VGA_T/vga_controller.vhd Line: 63
+Info (13000): Registers with preset signals will power-up high File: C:/Users/miria/DDM/VGA_T/hw_image_generator.vhd Line: 21
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "puntos~synth" File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 14
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX[0]" is stuck at GND File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 15
+    Warning (13410): Pin "HEX[1]" is stuck at VCC File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 15
+    Warning (13410): Pin "HEX[2]" is stuck at GND File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 15
+    Warning (13410): Pin "HEX[3]" is stuck at GND File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 15
+    Warning (13410): Pin "HEX[5]" is stuck at GND File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 15
+    Warning (13410): Pin "HEX[6]" is stuck at GND File: C:/Users/miria/DDM/VGA_T/VGA.vhd Line: 15
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 997 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 965 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 4796 megabytes
+    Info: Processing ended: Thu May 12 21:55:34 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:29
+
+

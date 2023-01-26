@@ -1,0 +1,473 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : -7.303
+TNS   : -217.990
+
+Type  : Slow 1200mV 85C Model Setup 'hw_image_generator:u3|x1[0]'
+Slack : -6.070
+TNS   : -17.860
+
+Type  : Slow 1200mV 85C Model Setup 'relojlento:u6|led'
+Slack : -4.910
+TNS   : -91.535
+
+Type  : Slow 1200mV 85C Model Setup 'relojlento:u4|led'
+Slack : -4.712
+TNS   : -75.409
+
+Type  : Slow 1200mV 85C Model Setup 'relojlento:u5|led'
+Slack : -4.676
+TNS   : -83.531
+
+Type  : Slow 1200mV 85C Model Setup 'relojlento:u9|led'
+Slack : -4.465
+TNS   : -84.254
+
+Type  : Slow 1200mV 85C Model Setup 'relojlento:u7|led'
+Slack : -4.089
+TNS   : -82.139
+
+Type  : Slow 1200mV 85C Model Setup 'relojlento:u8|led'
+Slack : -3.814
+TNS   : -76.624
+
+Type  : Slow 1200mV 85C Model Setup 'input_clk'
+Slack : -3.318
+TNS   : -63.793
+
+Type  : Slow 1200mV 85C Model Hold 'hw_image_generator:u3|x1[0]'
+Slack : -1.364
+TNS   : -1.643
+
+Type  : Slow 1200mV 85C Model Hold 'relojlento:u6|led'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'relojlento:u7|led'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'relojlento:u8|led'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'relojlento:u9|led'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'relojlento:u4|led'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'relojlento:u5|led'
+Slack : 0.624
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'input_clk'
+Slack : 0.631
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : 1.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'relojlento:u4|led'
+Slack : -3.147
+TNS   : -3.147
+
+Type  : Slow 1200mV 85C Model Recovery 'relojlento:u7|led'
+Slack : -2.539
+TNS   : -2.539
+
+Type  : Slow 1200mV 85C Model Recovery 'relojlento:u5|led'
+Slack : -2.395
+TNS   : -2.395
+
+Type  : Slow 1200mV 85C Model Recovery 'relojlento:u6|led'
+Slack : -1.891
+TNS   : -1.891
+
+Type  : Slow 1200mV 85C Model Recovery 'relojlento:u9|led'
+Slack : -1.713
+TNS   : -1.713
+
+Type  : Slow 1200mV 85C Model Recovery 'relojlento:u8|led'
+Slack : -1.645
+TNS   : -1.645
+
+Type  : Slow 1200mV 85C Model Removal 'relojlento:u5|led'
+Slack : 1.447
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'relojlento:u9|led'
+Slack : 1.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'relojlento:u8|led'
+Slack : 1.642
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'relojlento:u6|led'
+Slack : 1.974
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'relojlento:u7|led'
+Slack : 2.559
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'relojlento:u4|led'
+Slack : 3.393
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'input_clk'
+Slack : -3.000
+TNS   : -43.687
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : -1.403
+TNS   : -61.732
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'relojlento:u5|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'relojlento:u6|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'relojlento:u7|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'relojlento:u8|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'relojlento:u9|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'relojlento:u4|led'
+Slack : -1.403
+TNS   : -26.657
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'hw_image_generator:u3|x1[0]'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : -6.644
+TNS   : -197.143
+
+Type  : Slow 1200mV 0C Model Setup 'hw_image_generator:u3|x1[0]'
+Slack : -5.784
+TNS   : -17.010
+
+Type  : Slow 1200mV 0C Model Setup 'relojlento:u6|led'
+Slack : -4.470
+TNS   : -82.966
+
+Type  : Slow 1200mV 0C Model Setup 'relojlento:u5|led'
+Slack : -4.287
+TNS   : -75.922
+
+Type  : Slow 1200mV 0C Model Setup 'relojlento:u4|led'
+Slack : -4.279
+TNS   : -68.142
+
+Type  : Slow 1200mV 0C Model Setup 'relojlento:u9|led'
+Slack : -4.094
+TNS   : -76.196
+
+Type  : Slow 1200mV 0C Model Setup 'relojlento:u7|led'
+Slack : -3.739
+TNS   : -74.870
+
+Type  : Slow 1200mV 0C Model Setup 'relojlento:u8|led'
+Slack : -3.432
+TNS   : -68.914
+
+Type  : Slow 1200mV 0C Model Setup 'input_clk'
+Slack : -3.004
+TNS   : -55.980
+
+Type  : Slow 1200mV 0C Model Hold 'hw_image_generator:u3|x1[0]'
+Slack : -1.052
+TNS   : -1.306
+
+Type  : Slow 1200mV 0C Model Hold 'relojlento:u6|led'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'relojlento:u7|led'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'relojlento:u8|led'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'relojlento:u9|led'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'relojlento:u4|led'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'relojlento:u5|led'
+Slack : 0.577
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'input_clk'
+Slack : 0.585
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : 0.928
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'relojlento:u4|led'
+Slack : -2.870
+TNS   : -2.870
+
+Type  : Slow 1200mV 0C Model Recovery 'relojlento:u7|led'
+Slack : -2.254
+TNS   : -2.254
+
+Type  : Slow 1200mV 0C Model Recovery 'relojlento:u5|led'
+Slack : -2.209
+TNS   : -2.209
+
+Type  : Slow 1200mV 0C Model Recovery 'relojlento:u6|led'
+Slack : -1.639
+TNS   : -1.639
+
+Type  : Slow 1200mV 0C Model Recovery 'relojlento:u9|led'
+Slack : -1.440
+TNS   : -1.440
+
+Type  : Slow 1200mV 0C Model Recovery 'relojlento:u8|led'
+Slack : -1.410
+TNS   : -1.410
+
+Type  : Slow 1200mV 0C Model Removal 'relojlento:u9|led'
+Slack : 1.336
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'relojlento:u5|led'
+Slack : 1.337
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'relojlento:u8|led'
+Slack : 1.489
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'relojlento:u6|led'
+Slack : 1.822
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'relojlento:u7|led'
+Slack : 2.335
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'relojlento:u4|led'
+Slack : 3.086
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'input_clk'
+Slack : -3.000
+TNS   : -43.687
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : -1.403
+TNS   : -61.732
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'relojlento:u5|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'relojlento:u6|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'relojlento:u7|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'relojlento:u8|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'relojlento:u9|led'
+Slack : -1.403
+TNS   : -29.463
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'relojlento:u4|led'
+Slack : -1.403
+TNS   : -26.657
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'hw_image_generator:u3|x1[0]'
+Slack : -0.032
+TNS   : -0.032
+
+Type  : Fast 1200mV 0C Model Setup 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : -2.748
+TNS   : -71.777
+
+Type  : Fast 1200mV 0C Model Setup 'hw_image_generator:u3|x1[0]'
+Slack : -2.538
+TNS   : -7.480
+
+Type  : Fast 1200mV 0C Model Setup 'relojlento:u6|led'
+Slack : -1.858
+TNS   : -31.350
+
+Type  : Fast 1200mV 0C Model Setup 'relojlento:u5|led'
+Slack : -1.600
+TNS   : -27.297
+
+Type  : Fast 1200mV 0C Model Setup 'relojlento:u4|led'
+Slack : -1.483
+TNS   : -21.909
+
+Type  : Fast 1200mV 0C Model Setup 'relojlento:u9|led'
+Slack : -1.334
+TNS   : -24.058
+
+Type  : Fast 1200mV 0C Model Setup 'relojlento:u7|led'
+Slack : -1.187
+TNS   : -23.433
+
+Type  : Fast 1200mV 0C Model Setup 'relojlento:u8|led'
+Slack : -1.028
+TNS   : -20.320
+
+Type  : Fast 1200mV 0C Model Setup 'input_clk'
+Slack : -0.937
+TNS   : -11.249
+
+Type  : Fast 1200mV 0C Model Hold 'hw_image_generator:u3|x1[0]'
+Slack : -0.934
+TNS   : -1.052
+
+Type  : Fast 1200mV 0C Model Hold 'relojlento:u6|led'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'relojlento:u7|led'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'relojlento:u8|led'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'relojlento:u9|led'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'relojlento:u4|led'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'relojlento:u5|led'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'input_clk'
+Slack : 0.244
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : 0.380
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'relojlento:u4|led'
+Slack : -0.888
+TNS   : -0.888
+
+Type  : Fast 1200mV 0C Model Recovery 'relojlento:u5|led'
+Slack : -0.744
+TNS   : -0.744
+
+Type  : Fast 1200mV 0C Model Recovery 'relojlento:u7|led'
+Slack : -0.615
+TNS   : -0.615
+
+Type  : Fast 1200mV 0C Model Recovery 'relojlento:u6|led'
+Slack : -0.264
+TNS   : -0.264
+
+Type  : Fast 1200mV 0C Model Recovery 'relojlento:u9|led'
+Slack : -0.190
+TNS   : -0.190
+
+Type  : Fast 1200mV 0C Model Recovery 'relojlento:u8|led'
+Slack : -0.148
+TNS   : -0.148
+
+Type  : Fast 1200mV 0C Model Removal 'relojlento:u5|led'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'relojlento:u9|led'
+Slack : 0.624
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'relojlento:u8|led'
+Slack : 0.712
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'relojlento:u6|led'
+Slack : 0.833
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'relojlento:u7|led'
+Slack : 1.087
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'relojlento:u4|led'
+Slack : 1.380
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'input_clk'
+Slack : -3.000
+TNS   : -33.035
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Gen25MHz:u1|clk25MHz~reg0'
+Slack : -1.000
+TNS   : -44.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'relojlento:u5|led'
+Slack : -1.000
+TNS   : -21.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'relojlento:u6|led'
+Slack : -1.000
+TNS   : -21.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'relojlento:u7|led'
+Slack : -1.000
+TNS   : -21.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'relojlento:u8|led'
+Slack : -1.000
+TNS   : -21.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'relojlento:u9|led'
+Slack : -1.000
+TNS   : -21.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'relojlento:u4|led'
+Slack : -1.000
+TNS   : -19.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'hw_image_generator:u3|x1[0]'
+Slack : 0.016
+TNS   : 0.000
+
+------------------------------------------------------------

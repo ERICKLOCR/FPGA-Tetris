@@ -1,0 +1,283 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+
+
+ENTITY hw_image_generator IS
+  GENERIC(
+   pixels_y :  INTEGER := 478;   --row that first color will persist until
+   pixels_x :  INTEGER := 600);  --column that first color will persist until
+  
+  PORT(
+	 disp_ena :  IN   STD_LOGIC;  --display enable ('1' = display time, '0' = blanking time)
+    row      :  IN   INTEGER;    --row pixel coordinate
+    column   :  IN   INTEGER;    --column pixel coordinate
+    red      :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');  --red magnitude output to DAC
+    green    :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');  --green magnitude output to DAC
+    blue     :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+	 dipsw 	 :  IN	STD_LOGIC_VECTOR(1 DOWNTO 0);
+	 reloj 	 :  IN   STD_LOGIC);
+END hw_image_generator;
+
+
+
+ARCHITECTURE behavior OF hw_image_generator IS
+
+signal x: INTEGER RANGE 10 TO 310;
+signal y: INTEGER RANGE 10 TO 418;
+signal x1, y1, x2, y2: INTEGER RANGE 0 TO 600;
+
+--- ESPACIO DE JUEGO ---
+begin   
+	process(disp_ena, row, column)
+	begin
+		if(disp_ena = '1') THEN 
+			
+			-- LETRAS --
+			-- T --
+			if ((row > 378 and row <438) and (column>440 and column<460)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+			
+			elsif ((row > 398 and row <418) and (column>459 and column<520)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+					
+			-- E --	
+			elsif ((row > 347 and row <368) and (column>440 and column<520)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '0');
+					blue<=(OTHERS => '1');
+				
+			elsif ((row > 318 and row <358) and (column>440 and column<460)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '0');
+					blue<=(OTHERS => '1');
+					
+			elsif ((row > 308 and row <348) and (column>470 and column<490)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '0');
+					blue<=(OTHERS => '1');
+					
+			elsif ((row > 308 and row <348) and (column>500 and column<520)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '0');
+					blue<=(OTHERS => '1');
+					
+			-- T --
+			elsif ((row > 238 and row <298) and (column>440 and column<460)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '0');
+					blue<=(OTHERS => '0');
+			
+			elsif ((row > 258 and row <278) and (column>459 and column<520)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '0');
+					blue<=(OTHERS => '0');
+					
+			-- R --
+			elsif ((row > 168 and row <228) and (column>440 and column<450)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+			
+			elsif ((row > 208 and row <228) and (column>449 and column<470)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+			
+			elsif ((row > 168 and row <188) and (column>449 and column<470)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+			
+			elsif ((row > 168 and row <228) and (column>469 and column<480)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');		
+			
+			elsif ((row > 208 and row <228) and (column>479 and column<520)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+			
+			elsif ((row > 178 and row <198) and (column>479 and column<520)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+					
+			-- I --
+			elsif ((row > 138 and row <158) and (column>440 and column<520)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+			
+			-- S --
+			elsif ((row > 68 and row <128) and (column>440 and column<460)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+			
+			 elsif ((row > 108 and row <128) and (column>459 and column<470)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');	
+					
+			elsif ((row > 68 and row <128) and (column>469 and column<490)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+			
+			elsif ((row > 68 and row <88) and (column>489 and column<500)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+			
+			elsif ((row > 68 and row <128) and (column>499 and column<520)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+			
+			-- FIGURA L --
+			elsif ((row > 388 and row <468) and (column>408 and column<428)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+			
+			elsif ((row > 448 and row <468) and (column>427 and column<488)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+			
+			-- FIGURA I --
+			elsif ((row > 228 and row <368) and (column>530 and column<550)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '0');
+					blue<=(OTHERS => '1');
+					
+			elsif ((row > 138 and row <288) and (column>408 and column<428)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '0');
+					blue<=(OTHERS => '1');
+			
+			-- FIGURA Z --
+			elsif ((row > 18 and row <58) and (column>490 and column<510)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+					
+			elsif ((row > 38 and row <58) and (column>509 and column<530)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+					
+			elsif ((row > 38 and row <78) and (column>529 and column<550)) THEN
+					red <= (OTHERS => '0');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '0');
+			
+			
+			-- ESPACIO DE JUEGO --	
+			elsif ((row > 0 and row <10) and (column>0 and column<350)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+			
+			elsif ((row > 468 and row <478) and (column>0 and column<350)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+					
+			elsif ((row > 0 and row <478) and (column>0 and column<10)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+				
+			elsif ((row > 0 and row <478) and (column>340 and column<350)) THEN
+					red <= (OTHERS => '1');
+					green<=(OTHERS => '1');
+					blue<=(OTHERS => '1');
+		
+			
+			--CUADRO DE FIGURAS--		
+--			elsif ((row > 170 and row <320) and (column>450 and column<460)) THEN
+--					red <= (OTHERS => '1');
+--					green<=(OTHERS => '1');
+--					blue<=(OTHERS => '1');
+--			
+--			elsif ((row > 170 and row <320) and (column>590 and column<600)) THEN
+--					red <= (OTHERS => '1');
+--					green<=(OTHERS => '1');
+--					blue<=(OTHERS => '1');
+--					
+--			elsif ((row > 170 and row <180) and (column>450 and column<600)) THEN
+--					red <= (OTHERS => '1');
+--					green<=(OTHERS => '1');
+--					blue<=(OTHERS => '1');
+--					
+--				
+--			elsif ((row > 310 and row <320) and (column>450 and column<600)) THEN
+--					red <= (OTHERS => '1');
+--					green<=(OTHERS => '1');
+--					blue<=(OTHERS => '1');
+
+			elsif ((row > x and row <x+50) and (column>y and column<y+50)) THEN
+				red <= (OTHERS => '1');
+				
+			--FONDO--		
+			else		
+					red <= (OTHERS => '0');
+					green	<= (OTHERS => '0');
+					blue <= (OTHERS => '0');
+			end if;
+	END IF;  --del enable
+END PROCESS;
+
+
+PROCESS(reloj,dipsw)
+	BEGIN
+			if (reloj' event and reloj = '1') then
+				if ((dipsw(1)='0' and dipsw(0)='0') or (dipsw(1)='1' and dipsw(0)='1')) then 
+					if ((y=10 or y=289) and x<417) then 
+						y<=y;
+						x<=x+1;
+					elsif ((y=10 or y=289) and x=417) then 
+						y<=y;
+						x<=x;
+					elsif ((y>10 or y<289) and x<417) then 
+						y<=y;
+						x<=x+1;
+					elsif ((y>10 or y<289) and x=417) then 
+						y<=y;
+						x<=x;
+				end if;
+				
+				elsif (dipsw(1)='0' and dipsw(0)='1') then 
+					if (y=289 and x<417) then 
+						x<=x+1;
+						y<=y;
+					elsif (y=289 and x=417) then 
+						x<=x;
+						y<=y;
+					elsif (y<289 and x<417) then 
+						x<=x+1;
+						y<=y+1;
+					end if;
+				
+				elsif (dipsw(1)='1' and dipsw(0)='0') then 
+					if (y=10 and x<417) then 
+						x<=x+1;
+						y<=y;
+					elsif (y=10 and x=417) then 
+						x<=x;
+						y<=y;
+					elsif (y>10 and x<417) then 
+						x<=x+1;
+						y<=y-1;
+					end if;
+				end if;
+			end if;
+	end process;
+	
+END behavior;
